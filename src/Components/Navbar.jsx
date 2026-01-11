@@ -28,7 +28,7 @@ const Navbar = () => {
                     {/* USIAMO .MAP() PER CREARE I LINK DINAMICAMENTE*/}
                     {navLinks.map((link, index) => (
                         <li key={index} onClick={() => setIsOpen(false)}>
-                            <a href="{link.path}">{link.label}</a>
+                            <a href={link.path}>{link.label}</a>
                         </li>
                     ))}
                 </ul>
