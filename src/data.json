@@ -1,0 +1,42 @@
+{
+    "settings": {
+        "siteName": "Stiven Hoxha | Portfolio",
+        "language": "it",
+        "seoDescription": "Web & Wordpress Developer. Scopri i miei progetti e le mie competenze."
+    },
+    "navbar": {
+        "logo": "Stiven Hoxha",
+        "navLinks": [
+            {
+                "label": "Home",
+                "path": "/"
+            },
+            {
+                "label": "Chi Sono",
+                "path": "/about"
+            },
+            {
+                "label": "Progetti",
+                "path": "/projects"
+            },
+            {
+                "label": "Contatti",
+                "path": "/contact"
+            }
+        ]
+    },
+    "hero": {
+        "title": "Ciao, sono Stiven Hoxha",
+        "subtitle": "Jr Frontend & Wordpress Developer",
+        "description": "Che si tratti di scrivere codice pulito o di creare esperienze wordpress fluide, il mio obiettivo è chiarezza, efficienza e soluzioni durature. Credo che i grandi prodotti digitali siano relizzati con intenzione, coerenza e un tocco di creatività.",
+        "ctaPrimary": "Guarda i Progetti",
+        "profileImage": "inserisci immagine"
+    },
+    "socials": [
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/tuo-username",
+            "icon": "github-icon"
+        }
+    ]
+}
