@@ -1,6 +1,7 @@
 import React from 'react';
 import data from '../data/data.json/';
 import { useState } from 'react';
+import '../Components/Navbar.css'
 
 const Navbar = () => {
     // ESTRAIAMO IL LOGO E L'ARRAY DEI LINK
