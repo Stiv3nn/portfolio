@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 5% 50px 5%;
+    /* Spazio per la navbar fissa */
+    background: var(--bg-dark);
+    color: var(--text-main);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    /* Mobile: uno sopra l'altro */
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* Effetto gradiente sul nome */
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #fff, var(--accent-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-glow);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    padding: 12px 30px;
+    background: transparent;
+    border: 1px solid var(--accent-glow);
+    color: var(--accent-glow);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.hero-btn:hover {
+    background: var(--accent-glow);
+    color: #000;
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* Cerchio luminoso di sfondo */
+.glow-circle {
+    width: 200px;
+    height: 200px;
+    background: var(--accent-glow);
+    filter: blur(80px);
+    opacity: 0.2;
+    border-radius: 50%;
+}
+
+/* --- RESPONSIVE PER DESKTOP --- */
+@media (min-width: 1024px) {
+    .hero-container {
+        flex-direction: row;
+        /* Desktop: uno a fianco all'altro */
+        text-align: left;
+        justify-content: space-between;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .hero-content {
+        flex: 1;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .hero-visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .glow-circle {
+        width: 400px;
+        height: 400px;
+    }
+}
