@@ -1,12 +1,11 @@
-import './App.css'
+import Hero from "./Components/Hero.jsx";
 
 function App() {
   return (
-    <>
-      <div>
-        Portfolio
-      </div>
-    </>
+    <div className="App">
+      <Hero />
+      {/* QUI AGGIUNGEREMO LA NAVBAR E GLI ALTRI PEZZI */}
+    </div>
   )
 }
 
