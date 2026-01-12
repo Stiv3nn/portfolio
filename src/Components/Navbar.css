@@ -38,23 +38,21 @@
     position: fixed;
     top: 0;
     right: -100%;
-    /* Nascosto a destra */
+    /* Nascosto */
     height: 100vh;
-    width: 70%;
-    background: #111;
+    width: 100%;
+    /* Usa un unico background coerente per il mobile */
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 0.4s ease-in-out;
     list-style: none;
     gap: 2rem;
-    background: rgba(15, 15, 15, 0.95);
-    backdrop-filter: blur(15px);
     box-shadow: -10px 0 30px rgba(0, 242, 255, 0.1);
-    /* Leggero bagliore a sinistra */
     transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-    /* Curva di movimento più elegante */
+    z-index: 1500;
 }
 
 .nav-links a {
@@ -120,30 +118,28 @@
 @media (min-width: 1024px) {
     .nav-links {
         position: static;
-        /* Annulla il fixed del mobile */
         display: flex;
         flex-direction: row;
         gap: 2rem;
         width: auto;
         height: auto;
-        background: transparent;
+        /* IMPORTANTE: Reset per desktop */
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
         right: 0;
-        /* Li riporta in vista */
     }
 
     .nav-links li a {
         color: white;
-        /* Colore visibile su sfondo dark */
         text-decoration: none;
         transition: 0.3s;
     }
 
     .nav-links li a:hover {
         color: var(--accent-glow);
-        /* Effetto tech al passaggio del mouse */
     }
 
-    /* Nascondiamo l'hamburger su desktop */
     .nav-hamburger {
         display: none;
     }

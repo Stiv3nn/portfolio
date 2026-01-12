@@ -10,7 +10,6 @@
     align-items: center;
     justify-content: center;
     padding: 100px 5% 50px 5%;
-    /* Spazio per la navbar fissa */
     background: var(--bg-dark);
     color: var(--text-main);
     overflow: hidden;
@@ -18,8 +17,7 @@
 
 .hero-container {
     display: flex;
-    flex-direction: column;
-    /* Mobile: uno sopra l'altro */
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     gap: 2rem;
@@ -67,21 +65,64 @@
     box-shadow: 0 0 30px var(--accent-glow);
 }
 
-/* Cerchio luminoso di sfondo */
-.glow-circle {
+/* Contenitore Immagine fluttuante */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
+    /* Ridotto da 250px per renderlo più piccolo su mobile */
     height: 200px;
+}
+
+.profile-illustration {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    /* Ridotto per non toccare i bordi del contenitore */
+    height: auto;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Glow-circle posizionato dietro l'immagine */
+.glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    /* Adattato alla nuova dimensione dell'immagine */
+    height: 220px;
     background: var(--accent-glow);
-    filter: blur(80px);
-    opacity: 0.2;
+    filter: blur(60px);
+    /* Ridotto leggermente il blur per coerenza */
+    opacity: 0.25;
     border-radius: 50%;
+    z-index: 1;
+}
+
+/* Animazione di galleggiamento */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    /* Ridotto leggermente il salto */
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* --- RESPONSIVE PER DESKTOP --- */
 @media (min-width: 1024px) {
     .hero-container {
         flex-direction: row;
-        /* Desktop: uno a fianco all'altro */
         text-align: left;
         justify-content: space-between;
         max-width: 1200px;
@@ -98,12 +139,21 @@
 
     .hero-visual {
         flex: 1;
+        width: 350px;
+        /* Ridotto da 450px per un look più elegante */
+        height: 350px;
         display: flex;
         justify-content: center;
+    }
+
+    .profile-illustration {
+        width: 80%;
+        /* Mantiene l'immagine proporzionata e un po' più piccola */
     }
 
     .glow-circle {
         width: 400px;
         height: 400px;
+        filter: blur(90px);
     }
 }
