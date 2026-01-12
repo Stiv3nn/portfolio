@@ -13,11 +13,11 @@ const Navbar = () => {
             <nav className="navbar">
 
                 <div className="nav-logo">
-                    <h1>{logo}</h1>
+                    {logo}
                 </div>
 
                 {/* HAMBURGER ICON */}
-                <div classname={`nav-hamburger ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                <div className={`nav-hamburger ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(!isOpen)}>
                     <span></span>
                     <span></span>
                     <span></span>
