@@ -49,6 +49,12 @@
     transition: 0.4s ease-in-out;
     list-style: none;
     gap: 2rem;
+    background: rgba(15, 15, 15, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: -10px 0 30px rgba(0, 242, 255, 0.1);
+    /* Leggero bagliore a sinistra */
+    transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    /* Curva di movimento più elegante */
 }
 
 .nav-links a {
@@ -63,19 +69,51 @@
     /* Entra fluidamente */
 }
 
-/* Stile Hamburger */
 .nav-hamburger {
-    cursor: pointer;
     display: flex;
+    /* Forza il display su mobile */
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-around;
+    /* Spazia le linee internamente */
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    z-index: 2000;
+    /* Valore altissimo per essere sicuri */
+    position: relative;
+    /* Essenziale per il posizionamento */
 }
 
 .nav-hamburger span {
-    width: 25px;
+    display: block;
+    /* Importante per gli elementi span */
+    width: 100%;
     height: 3px;
-    background: var(--text-main);
+    background-color: #ffffff !important;
+    /* Forza il bianco per il test */
     transition: 0.3s;
+    border-radius: 5px;
+}
+
+/* QUANDO IL MENU E' APERTO (.open) */
+
+/* La prima linea ruota di 45° verso il basso */
+.nav-hamburger.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+/* La seconda linea (la centrale) scompare */
+.nav-hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+    /* Scivola via */
+}
+
+/* La terza linea ruota di 45° verso l'alto */
+.nav-hamburger.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
 }
 
 /* Assicuriamoci che su schermi grandi i link siano visibili e bianchi */
