@@ -1,6 +1,7 @@
+/* RESET E ROOT */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 5% 50px 5%;
+    padding: 120px 5% 50px 5%;
     background: var(--bg-dark);
     color: var(--text-main);
     overflow: hidden;
@@ -18,25 +19,80 @@
 .hero-container {
     display: flex;
     flex-direction: column-reverse;
+    /* Immagine sopra su mobile */
     align-items: center;
     text-align: center;
     gap: 2rem;
 }
 
-/* Effetto gradiente sul nome */
+/* --- TITOLO CON ANIMAZIONE TYPEWRITER --- */
 .hero-title {
+    font-family: var(--font-titles);
     font-size: 2.5rem;
+    font-weight: 800;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #fff, var(--accent-glow));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: center;
+    /* Centra su mobile */
 }
 
+.typewriter-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid var(--accent-purple);
+
+    /* Gradiente */
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Cambiamo width: 0 con un'animazione più sicura */
+    width: 0;
+    max-width: max-content;
+    /* Costringe il blocco a non superare la lunghezza del testo */
+    animation:
+        typing 5s steps(30, end) infinite,
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+
+    /* Usa il 100% dello spazio disponibile */
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+        justify-content: flex-start;
+        /* Allinea a sinistra su PC */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+        justify-content: flex-start;
+        /* Lo riallinea a sinistra su desktop */
+    }
+}
+
+/* SOTTOTITOLO */
 .hero-subtitle {
+    font-family: var(--font-body);
     font-size: 1.2rem;
-    color: var(--accent-glow);
+    font-weight: 500;
+    color: var(--accent-cyan);
     margin-bottom: 1.5rem;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
 
@@ -48,11 +104,12 @@
     margin-bottom: 2rem;
 }
 
+/* BOTTONE CON PULSAZIONE */
 .hero-btn {
     padding: 12px 30px;
     background: transparent;
-    border: 1px solid var(--accent-glow);
-    color: var(--accent-glow);
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
@@ -61,9 +118,79 @@
 }
 
 .hero-btn:hover {
-    background: var(--accent-glow);
+    background: var(--gradient-main);
+    border-color: transparent;
     color: #000;
-    box-shadow: 0 0 30px var(--accent-glow);
+    box-shadow: 0 0 30px var(--accent-purple);
+}
+
+/* --- VISUAL & GLOW --- */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 220px;
+}
+
+.profile-illustration {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4));
+    animation: float 3s ease-in-out infinite, gifGlow 4s infinite alternate;
+}
+
+@keyframes gifGlow {
+    from {
+        filter: drop-shadow(0 0 10px var(--accent-cyan));
+    }
+
+    to {
+        filter: drop-shadow(0 0 25px var(--accent-purple));
+    }
+}
+
+.glow-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: var(--accent-purple);
+    /* Glow viola per contrasto */
+    filter: blur(70px);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* --- ANIMAZIONI --- */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--accent-purple);
+    }
 }
 
 @keyframes buttonPulse {
@@ -74,114 +201,46 @@
     }
 
     50% {
-        box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+        box-shadow: 0 0 30px rgba(188, 19, 254, 0.4);
     }
 }
 
-/* Contenitore Immagine fluttuante */
-.hero-visual {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    /* Ridotto da 250px per renderlo più piccolo su mobile */
-    height: 200px;
-}
-
-.profile-illustration {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    /* Ridotto per non toccare i bordi del contenitore */
-    height: auto;
-    object-fit: contain;
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Glow-circle posizionato dietro l'immagine */
-.glow-circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 220px;
-    /* Adattato alla nuova dimensione dell'immagine */
-    height: 220px;
-    background: var(--accent-glow);
-    filter: blur(60px);
-    /* Ridotto leggermente il blur per coerenza */
-    opacity: 0.25;
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* Animazione di galleggiamento */
 @keyframes float {
-    0% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
 
     50% {
         transform: translateY(-12px);
     }
-
-    /* Ridotto leggermente il salto */
-    100% {
-        transform: translateY(0px);
-    }
 }
 
-.hero-title {
-    font-family: var(--font-titles);
-    font-weight: 800;
-    letter-spacing: -1.5px;
-    /* Stringe leggermente le lettere, tipico del design moderno */
-    line-height: 1.1;
-}
-
-.hero-subtitle {
-    font-family: var(--font-body);
-    font-weight: 500;
-    letter-spacing: 4px;
-    /* Molto spazio qui per contrasto */
-}
-
-/* --- RESPONSIVE PER DESKTOP --- */
+/* --- RESPONSIVE DESKTOP --- */
 @media (min-width: 1024px) {
     .hero-container {
         flex-direction: row;
+        /* Testo a sinistra, immagine a destra */
         text-align: left;
         justify-content: space-between;
         max-width: 1200px;
         width: 100%;
     }
 
-    .hero-content {
-        flex: 1;
-    }
-
     .hero-title {
         font-size: 4rem;
+        margin-bottom: 1.5rem;
     }
 
     .hero-visual {
-        flex: 1;
-        width: 350px;
-        /* Ridotto da 450px per un look più elegante */
-        height: 350px;
-        display: flex;
-        justify-content: center;
-    }
-
-    .profile-illustration {
-        width: 80%;
-        /* Mantiene l'immagine proporzionata e un po' più piccola */
+        width: 400px;
+        height: 400px;
     }
 
     .glow-circle {
-        width: 400px;
-        height: 400px;
-        filter: blur(90px);
+        width: 450px;
+        height: 450px;
+        filter: blur(100px);
     }
 }

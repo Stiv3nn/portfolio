@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-    /* ... i tuoi colori ... */
+    /* Font */
     --font-titles: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
+
+    /* Colori */
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --accent-cyan: #00f2ff;
+    --accent-purple: #bc13fe;
+
+    /* IL GRADIENTE (Fondamentale per far vedere il titolo) */
+    --gradient-main: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
 }
 
 * {
