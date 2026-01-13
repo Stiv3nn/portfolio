@@ -171,6 +171,11 @@
     }
 }
 
+.nav-logo h1 {
+    font-family: var(--font-titles);
+    letter-spacing: 2px;
+}
+
 /* Assicuriamoci che su schermi grandi i link siano visibili e bianchi */
 @media (min-width: 1024px) {
     .nav-links {
