@@ -9,7 +9,9 @@ const Hero = () => {
         <section className="hero">
             <div className="hero-container">
                 <div className="hero-content">
-                    <h1 className='hero-title'>{title}</h1>
+                    <h1 className='hero-title'>
+                        <span className="typewriter-text">{title}</span>
+                    </h1>
                     <h2 className='hero-subtitle'>{subtitle}</h2>
                     <p className='hero-description'>{description}</p>
                     <button className='hero-btn'>{ctaPrimary}</button>
