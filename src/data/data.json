@@ -1,42 +1,72 @@
 {
-    "settings": {
-        "siteName": "Stiven Hoxha | Portfolio",
-        "language": "it",
-        "seoDescription": "Web & Wordpress Developer. Scopri i miei progetti e le mie competenze."
-    },
-    "navbar": {
-        "logo": "Stiven Hoxha",
-        "navLinks": [
-            {
-                "label": "Home",
-                "path": "/"
-            },
-            {
-                "label": "Chi Sono",
-                "path": "/about"
-            },
-            {
-                "label": "Progetti",
-                "path": "/projects"
-            },
-            {
-                "label": "Contatti",
-                "path": "/contact"
-            }
-        ]
-    },
-    "hero": {
-        "title": "Stiven Hoxha",
-        "subtitle": "Jr Frontend & Wordpress Developer",
-        "description": "Che si tratti di scrivere codice pulito o di creare esperienze wordpress fluide, il mio obiettivo è chiarezza, efficienza e soluzioni durature. Credo che i grandi prodotti digitali siano relizzati con intenzione, coerenza e un tocco di creatività.",
-        "ctaPrimary": "Guarda i Progetti",
-        "profileImage": "src/assets/illustrazione_stiven.gif"
-    },
-    "socials": [
-        {
-            "platform": "GitHub",
-            "url": "https://github.com/tuo-username",
-            "icon": "github-icon"
-        }
+  "settings": {
+    "siteName": "Stiven Hoxha | Portfolio",
+    "language": "it",
+    "seoDescription": "Web & Wordpress Developer. Scopri i miei progetti e le mie competenze."
+  },
+  "navbar": {
+    "logo": "Stiven Hoxha",
+    "navLinks": [
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "Chi Sono",
+        "path": "/about"
+      },
+      {
+        "label": "Progetti",
+        "path": "/projects"
+      },
+      {
+        "label": "Contatti",
+        "path": "/contact"
+      }
     ]
+  },
+  "hero": {
+    "title": "Stiven Hoxha",
+    "subtitle": "Jr Frontend & Wordpress Developer",
+    "description": "Che si tratti di scrivere codice pulito o di creare esperienze wordpress fluide, il mio obiettivo è chiarezza, efficienza e soluzioni durature. Credo che i grandi prodotti digitali siano relizzati con intenzione, coerenza e un tocco di creatività.",
+    "ctaPrimary": "Guarda i Progetti",
+    "profileImage": "src/assets/illustrazione_stiven.gif"
+  },
+  "socials": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/tuo-username",
+      "icon": "github-icon"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Tech",
+      "description": "Next Level Shop è un e-commerce completo specializzato nella vednita di videogiochi, console e accessori gaming.",
+      "tech": ["HTML, CSS, JS, React, Node.js, MySQL"],
+      "image": "/src/assets/nls.png"
+    },
+    {
+      "id": 2,
+      "title": "BoolRoad",
+      "description": "Piattaforma di viaggi moderna e intuitiva, progettata per semplificare la pianificazione di esperienze di viaggio.",
+      "tech": ["HTML, CSS, JS, React, Node.js, MySQL"],
+      "image": "/src/assets/boolroad.png"
+    },
+    {
+      "id": 3,
+      "title": "Art-Edile",
+      "description": "Prototipo funzionale di un sito web sviluppato per un'impresa edile specializzato in ristrutturazioni e costruzioni civili.",
+      "tech": ["WordPress, PHP"],
+      "image": "/src/assets/artedile.png"
+    },
+    {
+      "id": 4,
+      "title": "Calculator",
+      "description": "Una calcolatrice web semplice e funzionale che permette di effettuare le operazioni matematiche fondamentali.",
+      "tech": ["HTML, CSS, JS"],
+      "image": "/src/assets/calulator.png"
+    }
+  ]
 }
