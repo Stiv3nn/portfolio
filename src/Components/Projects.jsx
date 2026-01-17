@@ -2,8 +2,6 @@ import React from 'react';
 import data from '../data/data.json';
 import './Projects.css';
 
-
-
 const Projects = () => {
 
     const { projects } = data;
