@@ -243,3 +243,8 @@
         filter: blur(100px);
     }
 }
+
+/* Applichiamo l'animazione come abbiamo fatto nella pagina progetti */
+.hero-content {
+    animation: fadeInUp 1.2s ease-out forwards;
+}
