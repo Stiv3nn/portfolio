@@ -2,6 +2,7 @@ import React from 'react';
 import data from '../data/data.json';
 import { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom'; // Importa Link
 
 const Navbar = () => {
     const { logo, navLinks } = data.navbar;
@@ -32,7 +33,8 @@ const Navbar = () => {
             <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
                 {navLinks.map((link, index) => (
                     <li key={index} onClick={() => setIsOpen(false)}>
-                        <a href={link.path}>{link.label}</a>
+                        {/* Sostituiamo <a> con <Link> e "href" con "to" */}
+                        <Link to={link.path}>{link.label}</Link>
                     </li>
                 ))}
             </ul>
