@@ -1,47 +1,91 @@
+/* --- SEZIONE PRINCIPALE --- */
 .projects {
-    padding: 80px 5%;
+    padding: 120px 5% 80px 5%;
+    /* Spazio extra in alto per la navbar fixed */
     background: var(--bg-dark);
+    min-height: 100vh;
 }
 
-.section-title {
-    font-family: var(--font-titles);
-    color: white;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 50px;
-    background: var(--gradient-main);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.project-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* --- HEADER INTRODUTTIVO --- */
+.project-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.overline {
+    display: block;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-family: var(--font-titles);
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.project-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-decoration {
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-main);
+    margin: 30px auto 0;
+    border-radius: 2px;
+}
+
+/* --- GRIGLIA PROGETTI --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* --- CARD SINGOLA --- */
 .project-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    /* Effetto vetro */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
     transform: translateY(-12px) scale(1.02);
     border-color: var(--accent-purple);
-    /* Cambia colore al passaggio */
     box-shadow: 0 20px 40px rgba(188, 19, 254, 0.2);
 }
 
+/* --- IMMAGINE E OVERLAY --- */
 .project-image {
     position: relative;
-    height: 200px;
+    height: 220px;
     overflow: hidden;
 }
 
@@ -54,17 +98,15 @@
 
 .project-card:hover .project-image img {
     transform: scale(1.1);
-    /* Zoom leggero */
 }
 
-/* Effetto al passaggio del mouse sopra l'immagine */
 .project-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,31 +121,76 @@
 .project-overlay a {
     color: var(--accent-cyan);
     border: 1px solid var(--accent-cyan);
-    padding: 10px 20px;
+    padding: 12px 25px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
+.project-overlay a:hover {
+    background: var(--accent-cyan);
+    color: #000;
+}
+
+/* --- INFO PROGETTO --- */
 .project-info {
-    padding: 20px;
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-info h3 {
-    color: white;
-    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-family: var(--font-titles);
+}
+
+.project-info p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* --- TAG TECNOLOGIE --- */
+.project-tech {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .project-tech span {
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
     background: rgba(188, 19, 254, 0.1);
     color: var(--accent-purple);
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 50px;
     border: 1px solid rgba(188, 19, 254, 0.3);
-    margin-right: 8px;
-    display: inline-block;
-    margin-top: 5px;
+    letter-spacing: 0.5px;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (min-width: 1024px) {
+    .project-header {
+        text-align: left;
+        margin: 0 0 80px 0;
+    }
+
+    .project-subtitle {
+        margin: 0;
+    }
+
+    .header-decoration {
+        margin: 30px 0 0 0;
+    }
+
+    .section-title {
+        font-size: 3.5rem;
+    }
 }
