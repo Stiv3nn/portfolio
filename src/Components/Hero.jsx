@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import data from '../data/data.json';
 import '../Components/Hero.css'
 
@@ -14,7 +15,9 @@ const Hero = () => {
                     </h1>
                     <h2 className='hero-subtitle'>{subtitle}</h2>
                     <p className='hero-description'>{description}</p>
-                    <button className='hero-btn'>{ctaPrimary}</button>
+                    <Link to="/progetti" className='hero-btn'>
+                        {ctaPrimary}
+                    </Link>
                 </div>
 
                 {/* INSERIRE L'IMMAGINE */}
