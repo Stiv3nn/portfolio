@@ -3,7 +3,7 @@ import data from '../data/data.json';
 import './Projects.css';
 
 const Projects = () => {
-    const { projects } = data;
+    const { projects, skills } = data;
 
     return (
         <section className="projects" id='projects'>
@@ -15,6 +15,21 @@ const Projects = () => {
                         Dall'ideazione alla distribuzione: ecco una selezione dei miei lavori più recenti.
                         Mi focalizzo sulla creazione di interfacce performanti, accessibili e con un codice pulito.
                     </p>
+
+                    {/* CAROSELLO SKILLS */}
+                    <div className="skills-marquee">
+                        <div className="marquee-content">
+                            {skills.map((skill, index) => (
+                                /* Aggiungiamo 'colored' alla lista delle classi */
+                                <i key={`f1-${index}`} className={`${skill} colored skill-icon`}></i>
+                            ))}
+                            {skills.map((skill, index) => (
+                                /* Ripetiamo anche qui per il secondo giro */
+                                <i key={`f2-${index}`} className={`${skill} colored skill-icon`}></i>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="header-decoration"></div>
                 </div>
 

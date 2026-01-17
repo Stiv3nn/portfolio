@@ -270,3 +270,66 @@
     animation-delay: 0.5s, 1.5s;
     /* Il float parte dopo che la card è apparsa */
 }
+
+/* ... mantieni il CSS precedente e aggiungi/modifica questi punti ... */
+
+.skills-marquee {
+    width: 100%;
+    overflow: hidden;
+    margin: 50px 0;
+    padding: 20px 0;
+    position: relative;
+    /* Crea l'effetto sfumato ai lati */
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover {
+    color: var(--accent-purple);
+    transform: scale(1.2) translateY(-5px);
+    filter: drop-shadow(0 0 10px var(--accent-purple));
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* OTTIMIZZAZIONE MOBILE: Schermata iniziale pulita */
+@media (max-width: 768px) {
+    .project-header {
+        min-height: 80vh;
+        /* Occupa quasi tutta la vista iniziale */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .skill-icon {
+        font-size: 2.2rem;
+    }
+
+    .marquee-content {
+        gap: 40px;
+    }
+}
