@@ -1,16 +1,20 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./Components/Navbar.jsx";
 import Hero from "./Components/Hero.jsx";
-import Projetcs from "./Components/Projects.jsx";
-
-
+import Projects from "./Components/Projects.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <Projetcs />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/progetti" element={<Projects />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
