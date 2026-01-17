@@ -263,15 +263,11 @@
 
 /* Applichiamo l'animazione alle card */
 .project-card {
-    /* Manteniamo le animazioni precedenti (fadeInUp) e aggiungiamo floatCard */
     animation:
         fadeInUp 0.8s ease-out forwards,
         floatCard 4s ease-in-out infinite;
     animation-delay: 0.5s, 1.5s;
-    /* Il float parte dopo che la card è apparsa */
 }
-
-/* ... mantieni il CSS precedente e aggiungi/modifica questi punti ... */
 
 .skills-marquee {
     width: 100%;
