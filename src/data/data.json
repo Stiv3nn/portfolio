@@ -4,6 +4,16 @@
     "language": "it",
     "seoDescription": "Web & Wordpress Developer. Scopri i miei progetti e le mie competenze."
   },
+  "skills": [
+    "devicon-html5-plain",
+    "devicon-css3-plain",
+    "devicon-javascript-plain",
+    "devicon-react-original",
+    "devicon-nodejs-plain",
+    "devicon-mysql-plain",
+    "devicon-mongodb-plain",
+    "devicon-git-plain"
+  ],
   "navbar": {
     "logo": "Stiven Hoxha",
     "navLinks": [
