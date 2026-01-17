@@ -66,7 +66,21 @@
       "title": "Calculator",
       "description": "Una calcolatrice web semplice e funzionale che permette di effettuare le operazioni matematiche fondamentali.",
       "tech": ["HTML, CSS, JS"],
-      "image": "/src/assets/calulator.png"
+      "image": "/src/assets/calculator.png"
+    },
+    {
+      "id": 5,
+      "title": "Spotify",
+      "description": "Una calcolatrice web semplice e funzionale che permette di effettuare le operazioni matematiche fondamentali.",
+      "tech": ["HTML, CSS"],
+      "image": "/src/assets/spotify.png"
+    },
+    {
+      "id": 6,
+      "title": "Ceres Alien Edition",
+      "description": "Una calcolatrice web semplice e funzionale che permette di effettuare le operazioni matematiche fondamentali.",
+      "tech": ["HTML, CSS, JS, React, Node.js"],
+      "image": "/src/assets/ceres.png"
     }
   ]
 }
