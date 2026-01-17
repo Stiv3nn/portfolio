@@ -23,11 +23,11 @@ const Projects = () => {
                         <div className="project-info">
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
-                            <div className="project-tech">
+                            {/* <div className="project-tech">
                                 {project.tech.map((t, index) => (
                                     <span key={index}>{t}</span>
                                 ))}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 ))}
