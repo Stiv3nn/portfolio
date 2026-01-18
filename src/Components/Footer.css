@@ -1,0 +1,103 @@
+.footer {
+    background: var(--bg-dark);
+    padding: 60px 5% 30px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra tutto orizzontalmente */
+}
+
+.footer-main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* Spazio tra Nome, Link e Social */
+    margin-bottom: 50px;
+}
+
+/* 1. Nome in alto */
+.footer-name {
+    font-family: var(--font-titles);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 2. Navigazione in riga */
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: #888;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-cyan);
+}
+
+/* 3. Social sotto */
+.footer-socials a {
+    font-size: 2rem;
+    color: #888;
+    transition: 0.3s;
+}
+
+.footer-socials a:hover {
+    color: var(--accent-purple);
+    filter: drop-shadow(0 0 8px var(--accent-purple));
+}
+
+/* --- BOTTOM SECTION --- */
+.footer-bottom {
+    width: 100%;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+    font-size: 0.85rem;
+}
+
+.back-to-top {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    color: var(--accent-cyan);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    .footer-nav {
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
