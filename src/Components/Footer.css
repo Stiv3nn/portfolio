@@ -55,6 +55,8 @@
 
 /* 3. Social sotto */
 .footer-socials a {
+    text-decoration: none;
+    display: inline-block;
     font-size: 2rem;
     color: #888;
     transition: 0.3s;
