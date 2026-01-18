@@ -1,6 +1,6 @@
 /* --- SEZIONE PRINCIPALE --- */
 .projects {
-    padding: 120px 5% 80px 5%;
+    padding: 120px 5% 5%;
     /* Spazio extra in alto per la navbar fixed */
     background: var(--bg-dark);
     min-height: 100vh;
