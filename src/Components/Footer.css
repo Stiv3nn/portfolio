@@ -91,6 +91,11 @@
     color: var(--accent-cyan);
 }
 
+.footer {
+    margin-top: 50px;
+    /* Ridure questo valore se lo spazio è troppo */
+}
+
 /* Mobile responsive */
 @media (max-width: 600px) {
     .footer-nav {
