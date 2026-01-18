@@ -1,10 +1,7 @@
 import React from 'react';
-import data from '../data/data.json';
 import './Contact.css';
 
 const Contact = () => {
-    const { socials } = data;
-
     return (
         <section className="contact-section">
             <div className="contact-container">
@@ -12,43 +9,47 @@ const Contact = () => {
                     <h2 className="section-title">Lavoriamo Insieme</h2>
                     <p className="contact-subtitle">
                         Hai un progetto in mente o vuoi semplicemente fare due chiacchiere?
-                        Scrivimi pure, rispondo solitamente entro 24 ore.
+                        Scrivimi pure, rispondo solitamente <strong>entro 24 ore</strong>.
                     </p>
                 </div>
 
                 <div className="contact-content">
-                    {/* INFO DI CONTATTO */}
-                    <div className="contact-info">
+                    {/* INFO GRID: Ora centrata e in riga */}
+                    <div className="contact-info-row">
                         <div className="info-item">
                             <i className="devicon-google-plain"></i>
-                            <div>
+                            <div className="info-text">
                                 <h4>Email</h4>
-                                <p>stiven.hoxha@example.it</p>
+                                <p>hstiven.dev@gmail.com</p>
                             </div>
                         </div>
+
                         <div className="info-item">
                             <i className="devicon-github-original"></i>
-                            <div>
+                            <div className="info-text">
                                 <h4>GitHub</h4>
-                                <p>github.com/tuo-username</p>
+                                <p>@stiv3nn</p>
                             </div>
                         </div>
-                        <div className="info-item">
+
+                        {/* <div className="info-item">
                             <i className="devicon-match-plain"></i>
-                            <div>
+                            <div className="info-text">
                                 <h4>Località</h4>
-                                <p>Italia (Remoto / Ibrido)</p>
+                                <p>Italia (Remoto)</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
-                    {/* FORM DI CONTATTO */}
+                    {/* FORM DI CONTATTO: Centrato sotto le info */}
                     <form className="contact-form">
-                        <div className="form-group">
-                            <input type="text" placeholder="Nome" required />
-                        </div>
-                        <div className="form-group">
-                            <input type="email" placeholder="Email" required />
+                        <div className="form-row">
+                            <div className="form-group">
+                                <input type="text" placeholder="Nome" required />
+                            </div>
+                            <div className="form-group">
+                                <input type="email" placeholder="Email" required />
+                            </div>
                         </div>
                         <div className="form-group">
                             <textarea placeholder="Il tuo messaggio" rows="5" required></textarea>
