@@ -4,7 +4,7 @@ import data from '../data/data.json';
 import './Footer.css';
 
 const Footer = () => {
-    const { siteName } = data.settings;
+    const { title } = data.hero;
     const { socials } = data;
 
     return (
@@ -13,7 +13,7 @@ const Footer = () => {
 
                 {/* BLOCCO CENTRALE */}
                 <div className="footer-main-content">
-                    <h3 className="footer-name">{siteName}</h3>
+                    <h3 className="footer-name">{title}</h3>
 
                     <nav className="footer-nav">
                         <Link to="/">Home</Link>
