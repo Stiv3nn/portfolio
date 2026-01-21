@@ -1,76 +1,219 @@
-.about-section {
-    padding: 140px 5% 80px;
-    background: var(--bg-dark);
-    min-height: 100vh;
+/* --- LAYOUT GENERALE --- */
+.st-page-container {
+    /* Rimosso background fisso per usare quello globale */
+    background-color: transparent;
+    color: var(--text-main, #ffffff);
+    padding: 120px 8% 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    position: relative;
+    z-index: 1;
 }
 
-.about-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.about-hero {
+/* --- RIGA DINAMICA --- */
+.st-about-row {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    margin-bottom: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.about-image .image-placeholder {
-    width: 100%;
-    aspect-ratio: 1;
-    background: var(--gradient-main);
-    border-radius: 30px;
+.st-about-row.st-reverse {
+    direction: rtl;
+}
+
+.st-about-row.st-reverse .st-content-box {
+    direction: ltr;
+}
+
+/* --- VISUAL ELEMENTS --- */
+.st-visual-box {
+    display: flex;
+    justify-content: center;
+}
+
+.st-image-wrapper {
+    width: 300px;
+    height: 300px;
+    /* Vetro più leggero per far trasparire lo sfondo del sito */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8rem;
-    color: white;
-    box-shadow: 0 20px 40px rgba(188, 19, 254, 0.2);
+    font-size: 7rem;
+    color: var(--accent-purple, #bc13fe);
+    position: relative;
+    backdrop-filter: blur(5px);
+    transition: transform 0.4s ease;
 }
 
-.about-text p {
-    color: #ccc;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.st-floating-badge {
+    position: absolute;
+    bottom: -15px;
+    background: #ffffff;
+    color: #000;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+/* --- TESTI --- */
+.st-tag {
+    color: var(--accent-cyan, #00f2ff);
+    font-family: monospace;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.st-section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.st-highlight {
+    background: var(--gradient-main, linear-gradient(90deg, #bc13fe, #00f2ff));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.st-description {
+    color: var(--text-dim, #aaaaaa);
     font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
 }
 
-.about-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+/* --- TECH LIST (Badge) --- */
+.st-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.skill-card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.st-tech-list span {
+    padding: 6px 14px;
+    background: rgba(188, 19, 254, 0.1);
+    color: var(--accent-purple, #bc13fe);
+    border: 1px solid rgba(188, 19, 254, 0.2);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* --- CTA FINALE --- */
+.st-final-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.st-cta-glass {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 60px 40px;
+    border-radius: 40px;
     text-align: center;
-    transition: 0.3s;
+    max-width: 800px;
+    width: 100%;
+    backdrop-filter: blur(10px);
 }
 
-.skill-card:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-10px);
+.st-main-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 45px;
+    background: linear-gradient(90deg, #bc13fe, #00f2ff, #bc13fe);
+    background-size: 200% auto;
+    /* Necessario per l'animazione del gradiente */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    /* Taglia l'effetto luce che esce dai bordi */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 10px 20px rgba(188, 19, 254, 0.2);
+    border: none;
+    cursor: pointer;
 }
 
-.skill-card i {
-    font-size: 3rem;
-    color: var(--accent-cyan);
-    margin-bottom: 20px;
+.st-main-button:hover {
+    transform: scale(1.08) translateY(-3px);
+    background-position: right center;
+    /* Muove il gradiente */
+    box-shadow: 0 15px 30px rgba(0, 242, 255, 0.4);
+    color: #fff;
 }
 
-/* MOBILE */
-@media (max-width: 850px) {
-    .about-hero {
+/* Effetto riflesso di luce (Shimmer) */
+.st-main-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: all 0.6s;
+}
+
+.st-main-button:hover::before {
+    left: 100%;
+}
+
+/* Effetto pressione al click */
+.st-main-button:active {
+    transform: scale(0.95);
+}
+
+/* --- MOBILE --- */
+@media (max-width: 900px) {
+    .st-page-container {
+        gap: 80px;
+        padding: 100px 5%;
+    }
+
+    .st-about-row,
+    .st-about-row.st-reverse {
         grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 30px;
+    }
+
+    .st-visual-box {
+        order: -1;
+    }
+
+    .st-image-wrapper {
+        width: 220px;
+        height: 220px;
+        font-size: 4rem;
+    }
+
+    .st-section-title,
+    .st-description,
+    .st-tag {
         text-align: center;
     }
 
-    .about-cards {
-        grid-template-columns: 1fr;
+    .st-tech-list {
+        justify-content: center;
     }
 }

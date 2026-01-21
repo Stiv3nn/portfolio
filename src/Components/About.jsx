@@ -1,49 +1,69 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
     return (
-        <section className="about-section">
-            <div className="about-container">
+        <div className="st-page-container">
 
-                {/* PARTE 1: INTRODUZIONE */}
-                <div className="about-hero">
-                    <div className="about-image">
-                        <div className="image-placeholder">
-                            {/* Qui andrà la tua foto o un'icona */}
-                            <i className="devicon-react-original"></i>
-                        </div>
-                    </div>
-                    <div className="about-text">
-                        <span className="overline">Chi Sono</span>
-                        <h2 className="section-title">Stiven Hoxha</h2>
-                        <p>
-                            Sono un <strong>Frontend Developer</strong> con una forte passione per la creazione di esperienze digitali intuitive e performanti.
-                            Il mio percorso unisce la flessibilità di <strong>WordPress</strong> alla potenza di <strong>React</strong>.
-                        </p>
-                        <p>
-                            Non mi limito a scrivere codice: mi occupo di trasformare idee complesse in interfacce pulite,
-                            curando ogni dettaglio dal design alla messa online.
-                        </p>
-                    </div>
-                </div>
-
-                {/* PARTE 2: LE DUE ANIME */}
-                <div className="about-cards">
-                    <div className="skill-card">
-                        <i className="devicon-wordpress-plain"></i>
-                        <h3>CMS Specialist</h3>
-                        <p>Esperienza nella creazione e gestione di siti WordPress, customizzazione di temi e ottimizzazione SEO.</p>
-                    </div>
-                    <div className="skill-card">
+            {/* SEZIONE 1: IDENTITÀ */}
+            <section className="st-about-row">
+                <div className="st-visual-box">
+                    <div className="st-image-wrapper">
                         <i className="devicon-react-original"></i>
-                        <h3>Frontend Dev</h3>
-                        <p>Sviluppo di Web App moderne con React, Tailwind CSS e gestione dello stato, con un occhio al clean code.</p>
+                        <div className="st-floating-badge">Frontend Specialist</div>
+                        <div className="st-glow-effect"></div>
                     </div>
                 </div>
+                <div className="st-content-box">
+                    <span className="st-tag">01. Profile</span>
+                    <h2 className="st-section-title">Sviluppo <span className="st-highlight">Web Moderno</span></h2>
+                    <p className="st-description">
+                        Trasformo idee complesse in applicazioni web performanti. Utilizzo le tecnologie più recenti per garantire che ogni progetto sia veloce, scalabile e ottimizzato per ogni dispositivo.
+                    </p>
+                    <div className="st-tech-list">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>JSX</span>
+                    </div>
+                </div>
+            </section>
 
-            </div>
-        </section>
+            {/* SEZIONE 2: COMPETENZE TECNICHE (Full Stack & CMS) */}
+            <section className="st-about-row st-reverse">
+                <div className="st-visual-box">
+                    <div className="st-image-wrapper st-alt-gradient">
+                        <i className="devicon-nodejs-plain"></i>
+                        <div className="st-floating-badge">Full Stack & CMS</div>
+                        <div className="st-glow-effect"></div>
+                    </div>
+                </div>
+                <div className="st-content-box">
+                    <span className="st-tag">02. Skills & Tools</span>
+                    <h2 className="st-section-title">Tecnologie <span className="st-highlight">Core</span></h2>
+                    <p className="st-description">
+                        Il mio arsenale tech copre l'intero ciclo di sviluppo, dal backend robusto con Node.js alla gestione flessibile dei contenuti con WordPress ed Elementor.
+                    </p>
+                    <div className="st-tech-list">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MySQL</span>
+                        <span>Elementor</span>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA FINALE */}
+            <section className="st-final-cta">
+                <div className="st-cta-glass">
+                    <h2 className="st-section-title">Hai un <span className="st-highlight">Progetto?</span></h2>
+                    <p>Sono pronto a mettere le mie competenze al servizio della tua visione digitale.</p>
+                    <Link to="/contact" className="st-main-button">Lavoriamo Insieme</Link>
+                </div>
+            </section>
+        </div>
     );
 };
 
