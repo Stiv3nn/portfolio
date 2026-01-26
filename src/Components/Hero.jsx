@@ -15,7 +15,7 @@ const Hero = () => {
                     </h1>
                     <h2 className='hero-subtitle'>{subtitle}</h2>
                     <p className='hero-description'>{description}</p>
-                    <Link to="/progetti" className='hero-btn'>
+                    <Link to="/contact" className='hero-btn'>
                         {ctaPrimary}
                     </Link>
                 </div>

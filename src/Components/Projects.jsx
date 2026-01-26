@@ -10,10 +10,9 @@ const Projects = () => {
             <div className="project-container">
                 {/* SEZIONE INTRODUTTIVA */}
                 <div className="project-header">
-                    <h2 className="section-title">Soluzioni Digitali e Progetti</h2>
+                    <h2 className="section-title">Sviluppo di Concept</h2>
                     <p className="project-subtitle">
-                        Dall'ideazione alla distribuzione: ecco una selezione dei miei lavori più recenti.
-                        Mi focalizzo sulla creazione di interfacce performanti, accessibili e con un codice pulito.
+                        Una raccolta di concept progettuali sviluppati per scenari reali. Ogni lavoro dimostra come un'idea, attraverso una struttura solida e un'interfaccia studiata, possa diventare un prototipo funzionale e pronto per l'uso.
                     </p>
 
                     {/* CAROSELLO SKILLS */}
