@@ -1,68 +1,86 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './About.css';
+import data from '../data/data.json';
 
 const About = () => {
+    const { profileImageAbout } = data.about;
+
     return (
-        <div className="st-page-container">
+        <div className="cy-viewport">
+            {/* Elementi di sfondo per profondità visiva */}
+            <div className="cy-grid-bg"></div>
+            <div className="cy-ambient-glow"></div>
 
-            {/* SEZIONE 1: IDENTITÀ */}
-            <section className="st-about-row">
-                <div className="st-visual-box">
-                    <div className="st-image-wrapper">
-                        <i className="devicon-react-original"></i>
-                        <div className="st-floating-badge">Frontend Specialist</div>
-                        <div className="st-glow-effect"></div>
+            <main className="cy-bento-grid">
+
+                {/* UNIT 01: PROFILE VISUAL */}
+                <div className="cy-item item-profile">
+                    <div className="cy-scanner"></div>
+                    <div className="img-wrapper">
+                        <img src={profileImageAbout} alt="Stiven Architecture" />
+                    </div>
+                    <div className="cy-overlay-info">
+                        <div className="status-pulse"></div>
+                        <p>OPERATOR: STIVEN_01 // ACTIVE</p>
                     </div>
                 </div>
-                <div className="st-content-box">
-                    <span className="st-tag">01. Profile</span>
-                    <h2 className="st-section-title">Sviluppo <span className="st-highlight">Web Moderno</span></h2>
-                    <p className="st-description">
-                        Trasformo idee complesse in applicazioni web performanti. Utilizzo le tecnologie più recenti per garantire che ogni progetto sia veloce, scalabile e ottimizzato per ogni dispositivo.
+
+                {/* UNIT 02: CORE IDENTITY */}
+                <div className="cy-item item-bio">
+                    <div className="cy-header">
+                        <span className="cy-code">PROTOCOL_09</span>
+                        <span className="cy-tag">MISSION_STATEMENT</span>
+                    </div>
+                    <h1 className="cy-title">Sviluppo <span>Interfacce</span> <br /> ad Alta Tensione.</h1>
+                    <p className="cy-desc">
+                        Architetto del codice specializzato nella creazione di ecosistemi digitali dove
+                        la velocità di esecuzione incontra un'estetica brutale. Non costruisco siti,
+                        progetto esperienze sensoriali decodificate per il web moderno.
                     </p>
-                    <div className="st-tech-list">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript (ES6+)</span>
-                        <span>JSX</span>
-                    </div>
                 </div>
-            </section>
 
-            {/* SEZIONE 2: COMPETENZE TECNICHE (Full Stack & CMS) */}
-            <section className="st-about-row st-reverse">
-                <div className="st-visual-box">
-                    <div className="st-image-wrapper st-alt-gradient">
-                        <i className="devicon-nodejs-plain"></i>
-                        <div className="st-floating-badge">Full Stack & CMS</div>
-                        <div className="st-glow-effect"></div>
+                {/* UNIT 03: ENGINE STACK */}
+                <div className="cy-item item-stack">
+                    <div className="cy-header">
+                        <span className="cy-code">CORE_DEVICES</span>
+                        <span className="cy-tag">V.2.0.4</span>
+                    </div>
+                    <div className="stack-grid">
+                        <div className="stack-pill">React // Engine</div>
+                        <div className="stack-pill">Next.js // Speed</div>
+                        <div className="stack-pill">Three.js // 3D</div>
+                        <div className="stack-pill">Tailwind // UI</div>
+                        <div className="stack-pill">TypeScript // Logic</div>
                     </div>
                 </div>
-                <div className="st-content-box">
-                    <span className="st-tag">02. Skills & Tools</span>
-                    <h2 className="st-section-title">Tecnologie <span className="st-highlight">Core</span></h2>
-                    <p className="st-description">
-                        Il mio arsenale tech copre l'intero ciclo di sviluppo, dal backend robusto con Node.js alla gestione flessibile dei contenuti con WordPress ed Elementor.
-                    </p>
-                    <div className="st-tech-list">
-                        <span>React</span>
-                        <span>Node.js</span>
-                        <span>Express.js</span>
-                        <span>MySQL</span>
-                        <span>Elementor</span>
-                    </div>
-                </div>
-            </section>
 
-            {/* CTA FINALE */}
-            <section className="st-final-cta">
-                <div className="st-cta-glass">
-                    <h2 className="st-section-title">Hai un <span className="st-highlight">Progetto?</span></h2>
-                    <p>Sono pronto a mettere le mie competenze al servizio della tua visione digitale.</p>
-                    <Link to="/contact" className="st-main-button">Lavoriamo Insieme</Link>
+                {/* UNIT 04: TELEMETRY */}
+                <div className="cy-item item-stats">
+                    <div className="stat-box">
+                        <span className="stat-val">0.4s</span>
+                        <span className="stat-lab">AVG_LOAD_TIME</span>
+                    </div>
+                    <div className="stat-box">
+                        <span className="stat-val">∞</span>
+                        <span className="stat-lab">CREATIVE_LOGIC</span>
+                    </div>
                 </div>
-            </section>
+
+                {/* UNIT 05: AUXILIARY TOOLS */}
+                <div className="cy-item item-tools">
+                    <div className="cy-header">
+                        <span className="cy-code">AUX_UNITS</span>
+                        <span className="cy-tag">UPTIME: 99.9%</span>
+                    </div>
+                    <ul className="tool-list">
+                        <li><span>▶</span> <b>NEOVIM</b> // ENVIRONMENT</li>
+                        <li><span>▶</span> <b>FIGMA</b> // BLUEPRINTS</li>
+                        <li><span>▶</span> <b>DOCKER</b> // CONTAINERS</li>
+                        <li><span>▶</span> <b>GIT</b> // TIMELINE</li>
+                    </ul>
+                </div>
+
+            </main>
         </div>
     );
 };
