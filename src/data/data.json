@@ -42,6 +42,9 @@
     "ctaPrimary": "Contattami",
     "profileImage": "src/assets/illustrazione_stiven.gif"
   },
+  "about": {
+    "profileImageAbout": "src/assets/caffe_time.png"
+  },
   "socials": [
     {
       "platform": "GitHub",
