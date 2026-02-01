@@ -2,7 +2,7 @@ import React from 'react';
 import data from '../data/data.json';
 import { useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom'; // Importa Link
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const { logo, navLinks } = data.navbar;
@@ -31,12 +31,21 @@ const Navbar = () => {
 
             {/* MENU LINKS */}
             <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
-                {navLinks.map((link, index) => (
-                    <li key={index} onClick={() => setIsOpen(false)}>
-                        {/* Sostituiamo <a> con <Link> e "href" con "to" */}
-                        <Link to={link.path}>{link.label}</Link>
-                    </li>
-                ))}
+                {navLinks.map((link, index) => {
+                    // Controlliamo se il link è quello dei contatti
+                    const isContact = link.label.toLowerCase() === 'contatti' || link.path === '/contatti';
+
+                    return (
+                        <li key={index} onClick={() => setIsOpen(false)}>
+                            <Link
+                                to={link.path}
+                                className={isContact ? 'nav-contact' : ''}
+                            >
+                                {link.label}
+                            </Link>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );
