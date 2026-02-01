@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
+    const form = useRef();
+    const [status, setStatus] = useState('');
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setStatus('SENDING...');
+
+        emailjs.sendForm(
+            'service_mjoha3b',
+            'template_vgx2mq9',
+            form.current,
+            'f3vMo7_Nj60quGQ90'
+        )
+            .then((result) => {
+                console.log(result.text);
+                setStatus('MESSAGGIO_INVIATO');
+                form.current.reset();
+
+                // Il messaggio ora scompare dopo 3 secondi (3000ms)
+                setTimeout(() => {
+                    setStatus('');
+                }, 3000);
+            }, (error) => {
+                console.log(error.text);
+                setStatus('ERRORE_INVIO');
+
+                setTimeout(() => {
+                    setStatus('');
+                }, 3000);
+            });
+    };
+
     return (
         <section className="contact-section">
             <div className="contact-container">
@@ -14,7 +47,6 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-content">
-                    {/* INFO GRID: Ora centrata e in riga */}
                     <div className="contact-info-row">
                         <div className="info-item">
                             <i className="devicon-google-plain"></i>
@@ -31,35 +63,65 @@ const Contact = () => {
                                 <p>@stiv3nn</p>
                             </div>
                         </div>
-
-                        {/* <div className="info-item">
-                            <i className="devicon-match-plain"></i>
-                            <div className="info-text">
-                                <h4>Località</h4>
-                                <p>Italia (Remoto)</p>
-                            </div>
-                        </div> */}
                     </div>
 
-                    {/* FORM DI CONTATTO: Centrato sotto le info */}
-                    <form className="contact-form">
+                    <form ref={form} onSubmit={sendEmail} className="contact-form">
                         <div className="form-row">
                             <div className="form-group">
-                                <input type="text" placeholder="Nome" required />
+                                <input
+                                    type="text"
+                                    name="from_name"
+                                    placeholder="Nome"
+                                    required
+                                />
                             </div>
                             <div className="form-group">
-                                <input type="email" placeholder="Email" required />
+                                <input
+                                    type="email"
+                                    name="reply_to"
+                                    placeholder="Email"
+                                    required
+                                />
                             </div>
                         </div>
                         <div className="form-group">
-                            <textarea placeholder="Il tuo messaggio" rows="5" required></textarea>
+                            <textarea
+                                name="message"
+                                placeholder="Il tuo messaggio"
+                                rows="5"
+                                required
+                            ></textarea>
                         </div>
-                        <button type="submit" className="btn-submit">
-                            Invia Messaggio
+
+                        <button
+                            type="submit"
+                            className="btn-submit"
+                            disabled={status === 'SENDING...'}
+                        >
+                            {status === 'SENDING...' ? 'CARICAMENTO...' : 'Invia Messaggio'}
                         </button>
                     </form>
                 </div>
             </div>
+
+            {/* OVERLAY DI SUCCESSO AGGIORNATO */}
+            {status === 'MESSAGGIO_INVIATO' && (
+                <div className="cy-success-overlay">
+                    <div className="cy-success-content">
+                        <div className="success-icon">✓</div>
+                        <h3>MESSAGGIO INVIATO</h3>
+                        <p>Grazie per avermi contattato. Ti risponderò al più presto!</p>
+                        {/* Ricorda di aggiornare l'animazione 'shrink' nel CSS a 3s */}
+                        <div className="loading-bar"></div>
+                    </div>
+                </div>
+            )}
+
+            {status === 'ERRORE_INVIO' && (
+                <div className="cy-error-toast">
+                    <p>Si è verificato un errore. Riprova più tardi.</p>
+                </div>
+            )}
         </section>
     );
 };
