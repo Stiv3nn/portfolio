@@ -19,10 +19,10 @@ const About = () => {
                     <div className="img-wrapper">
                         <img src={profileImageAbout} alt="Stiven Architecture" />
                     </div>
-                    <div className="cy-overlay-info">
+                    {/* <div className="cy-overlay-info">
                         <div className="status-pulse"></div>
                         <p>OPERATOR: STIVEN_01 // ACTIVE</p>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* UNIT 02: CORE IDENTITY */}
