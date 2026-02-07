@@ -40,10 +40,10 @@
     "subtitle": "Jr Frontend & Wordpress Developer",
     "description": "C'è un'eleganza nelle cose ben fatte, una quiete in un codice pulito e in un'esperienza fluida. È questo che cerco: quella chiarezza essenziale che trasforma un progetto in una soluzione duratura.",
     "ctaPrimary": "Contattami",
-    "profileImage": "src/assets/illustrazione_stiven.gif"
+    "profileImage": "images/illustrazione_stiven.gif"
   },
   "about": {
-    "profileImageAbout": "src/assets/caffe_time.png"
+    "profileImageAbout": "images/caffe_time.png"
   },
   "socials": [
     {
