@@ -58,42 +58,42 @@
       "title": "E-Commerce Tech",
       "description": "Next Level Shop è un e-commerce completo specializzato nella vednita di videogiochi, console e accessori gaming.",
       "tech": ["HTML, CSS, JS, React, Express.js, Node.js, MySQLL"],
-      "image": "/src/assets/nls.png"
+      "image": "/images/nls.png"
     },
     {
       "id": 2,
       "title": "BoolRoad",
       "description": "Piattaforma di viaggi moderna e intuitiva, progettata per semplificare la pianificazione di esperienze di viaggio.",
       "tech": ["HTML, CSS, JS, React, Express.js, Node.js, MySQL"],
-      "image": "/src/assets/boolroad.png"
+      "image": "/images/boolroad.png"
     },
     {
       "id": 3,
       "title": "Art-Edile",
       "description": "Prototipo funzionale di un sito web sviluppato per un'impresa edile specializzato in ristrutturazioni e costruzioni civili.",
       "tech": ["WordPress, Elementor, PHP"],
-      "image": "/src/assets/artedile.png"
+      "image": "/images/artedile.png"
     },
     {
       "id": 4,
       "title": "Calculator",
       "description": "Una calcolatrice web semplice e funzionale che permette di effettuare le operazioni matematiche fondamentali.",
       "tech": ["HTML, CSS, JS"],
-      "image": "/src/assets/calculator.png"
+      "image": "/images/calculator.png"
     },
     {
       "id": 5,
       "title": "Spotify",
       "description": "Ricreazione della homepage di Spotify webapp usando HTML e CSS. Include sidebar navigabile, playlist consigliabile, pannello personalizzato e player con controlli completi.",
       "tech": ["HTML, CSS"],
-      "image": "/src/assets/spotify.png"
+      "image": "/images/spotify.png"
     },
     {
       "id": 6,
       "title": "Ceres Alien Edition",
       "description": "Progetto di e-commerce sviluppato in team con copywriter, ispirato all'iconico stile della birra Ceres. Offre catalogo prodotti alcolici e abbigliamento streetwear.",
       "tech": ["HTML, CSS, JS, React"],
-      "image": "/src/assets/ceres.png"
+      "image": "/images/ceres.png"
     }
   ]
 }

@@ -70,7 +70,7 @@ const Contact = () => {
                             <div className="form-group">
                                 <input
                                     type="text"
-                                    name="from_name"
+                                    name="name"
                                     placeholder="Nome"
                                     required
                                 />
@@ -78,7 +78,7 @@ const Contact = () => {
                             <div className="form-group">
                                 <input
                                     type="email"
-                                    name="reply_to"
+                                    name="email"
                                     placeholder="Email"
                                     required
                                 />
