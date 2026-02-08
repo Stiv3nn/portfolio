@@ -28,14 +28,12 @@ const About = () => {
                 {/* UNIT 02: CORE IDENTITY */}
                 <div className="cy-item item-bio">
                     <div className="cy-header">
-                        <span className="cy-code">PROTOCOL_09</span>
-                        <span className="cy-tag">MISSION_STATEMENT</span>
+                        <span className="cy-code">FRONTEND_DEVELOPER</span>
+                        <span className="cy-tag">CREATIVE_CODER</span>
                     </div>
                     <h1 className="cy-title">Sviluppo <span>Interfacce</span> <br /> ad Alta Tensione.</h1>
                     <p className="cy-desc">
-                        Architetto del codice specializzato nella creazione di ecosistemi digitali dove
-                        la velocità di esecuzione incontra un'estetica brutale. Non costruisco siti,
-                        progetto esperienze sensoriali decodificate per il web moderno.
+                        Mi dedico alla progettazione e allo sviluppo di siti web, ponendo particolare attenzione alla fluidità dell'esperienza utente, alla velocità di caricamento e alla solidità del codice.
                     </p>
                 </div>
 
@@ -57,26 +55,26 @@ const About = () => {
                 {/* UNIT 04: TELEMETRY */}
                 <div className="cy-item item-stats">
                     <div className="stat-box">
-                        <span className="stat-val">0.4s</span>
-                        <span className="stat-lab">AVG_LOAD_TIME</span>
+                        <span className="stat-val">FOCUS SULLA QUALITA'</span>
+                        <span className="stat-lab">PRIMA DI TUTTO</span>
                     </div>
                     <div className="stat-box">
-                        <span className="stat-val">∞</span>
-                        <span className="stat-lab">CREATIVE_LOGIC</span>
+                        <span className="stat-val">∞ PASSIONE PER L'INNOVAZIONE</span>
+                        <span className="stat-lab">SEMPRE AL PASSO</span>
                     </div>
                 </div>
 
                 {/* UNIT 05: AUXILIARY TOOLS */}
                 <div className="cy-item item-tools">
                     <div className="cy-header">
-                        <span className="cy-code">AUX_UNITS</span>
-                        <span className="cy-tag">UPTIME: 99.9%</span>
+                        <span className="cy-code">SEMPLICITA' & EFFICIENZA</span>
+                        <span className="cy-tag">I MIEI VALORI</span>
                     </div>
                     <ul className="tool-list">
-                        <li><span>▶</span> <b>NEOVIM</b> // ENVIRONMENT</li>
-                        <li><span>▶</span> <b>FIGMA</b> // BLUEPRINTS</li>
-                        <li><span>▶</span> <b>DOCKER</b> // CONTAINERS</li>
-                        <li><span>▶</span> <b>GIT</b> // TIMELINE</li>
+                        <li><span>▶</span> <b>PASSIONE</b> // PROBLEM SOLVING</li>
+                        <li><span>▶</span> <b>OSSESSIONE</b> // DETTAGLI</li>
+                        <li><span>▶</span> <b>RICERCA</b> // INNOVAZIONE</li>
+                        <li><span>▶</span> <b>OBBIETTIVO</b> // IMPATTO</li>
                     </ul>
                 </div>
 
