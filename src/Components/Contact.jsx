@@ -5,6 +5,7 @@ import './Contact.css';
 const Contact = () => {
     const form = useRef();
     const [status, setStatus] = useState('');
+    const [copyFeedback, setCopyFeedback] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -17,22 +18,20 @@ const Contact = () => {
             'f3vMo7_Nj60quGQ90'
         )
             .then((result) => {
-                console.log(result.text);
                 setStatus('MESSAGGIO_INVIATO');
                 form.current.reset();
-
-                // Il messaggio ora scompare dopo 3 secondi (3000ms)
-                setTimeout(() => {
-                    setStatus('');
-                }, 3000);
+                setTimeout(() => setStatus(''), 3000);
             }, (error) => {
-                console.log(error.text);
                 setStatus('ERRORE_INVIO');
-
-                setTimeout(() => {
-                    setStatus('');
-                }, 3000);
+                setTimeout(() => setStatus(''), 3000);
             });
+    };
+
+    // Funzione per copiare l'email
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText('hstiven.dev@gmail.com');
+        setCopyFeedback(true);
+        setTimeout(() => setCopyFeedback(false), 2000);
     };
 
     return (
@@ -48,78 +47,58 @@ const Contact = () => {
 
                 <div className="contact-content">
                     <div className="contact-info-row">
-                        <div className="info-item">
+                        {/* CARD EMAIL CON FUNZIONE COPIA */}
+                        <div className="info-item clickable-card" onClick={handleCopyEmail}>
                             <i className="devicon-google-plain"></i>
                             <div className="info-text">
                                 <h4>Email</h4>
-                                <p>hstiven.dev@gmail.com</p>
+                                <p>{copyFeedback ? "Copiato negli appunti!" : "hstiven.dev@gmail.com"}</p>
                             </div>
                         </div>
 
-                        <div className="info-item">
+                        {/* CARD GITHUB (LINK ESTERNO) */}
+                        <a
+                            href="https://github.com/stiv3nn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="info-item clickable-card"
+                        >
                             <i className="devicon-github-original"></i>
                             <div className="info-text">
                                 <h4>GitHub</h4>
                                 <p>@stiv3nn</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
 
                     <form ref={form} onSubmit={sendEmail} className="contact-form">
                         <div className="form-row">
                             <div className="form-group">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Nome Cognome"
-                                    required
-                                />
+                                <input type="text" name="name" placeholder="Nome Cognome" required />
                             </div>
                             <div className="form-group">
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email"
-                                    required
-                                />
+                                <input type="email" name="email" placeholder="Email" required />
                             </div>
                         </div>
                         <div className="form-group">
-                            <textarea
-                                name="message"
-                                placeholder="Il tuo messaggio"
-                                rows="5"
-                                required
-                            ></textarea>
+                            <textarea name="message" placeholder="Il tuo messaggio" rows="5" required></textarea>
                         </div>
 
-                        <button
-                            type="submit"
-                            className="btn-submit"
-                            disabled={status === 'SENDING...'}
-                        >
+                        <button type="submit" className="btn-submit" disabled={status === 'SENDING...'}>
                             {status === 'SENDING...' ? 'CARICAMENTO...' : 'Invia Messaggio'}
                         </button>
                     </form>
                 </div>
             </div>
 
-            {/* OVERLAY DI SUCCESSO AGGIORNATO */}
             {status === 'MESSAGGIO_INVIATO' && (
                 <div className="cy-success-overlay">
                     <div className="cy-success-content">
                         <div className="success-icon">✓</div>
                         <h3>MESSAGGIO INVIATO</h3>
                         <p>Grazie per avermi contattato. Ti risponderò al più presto!</p>
-                        {/* Ricorda di aggiornare l'animazione 'shrink' nel CSS a 3s */}
                         <div className="loading-bar"></div>
                     </div>
-                </div>
-            )}
-
-            {status === 'ERRORE_INVIO' && (
-                <div className="cy-error-toast">
-                    <p>Si è verificato un errore. Riprova più tardi.</p>
                 </div>
             )}
         </section>

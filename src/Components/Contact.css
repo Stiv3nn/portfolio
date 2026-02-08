@@ -71,13 +71,12 @@
 .contact-info-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* Due colonne per Email e GitHub */
     gap: 25px;
     width: 100%;
     max-width: 700px;
-    /* Più stretto per stare in linea col form */
 }
 
+/* MODIFICA: Aggiunto text-decoration e color inherit per rimuovere sottolineature link */
 .info-item {
     display: flex;
     flex-direction: column;
@@ -88,6 +87,8 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
 .info-item:hover {
@@ -183,8 +184,6 @@
 
 /* --- MOBILE RESPONSIVE OTTIMIZZATO --- */
 @media (max-width: 768px) {
-
-    /* Mettiamo i due item sulla stessa riga anche su mobile, ma più piccoli */
     .contact-info-row {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
@@ -193,33 +192,26 @@
 
     .info-item {
         padding: 15px 10px;
-        /* Molto più sottili */
         border-radius: 12px;
     }
 
     .info-item i {
         font-size: 1.5rem;
-        /* Icona rimpicciolita */
         margin-bottom: 8px;
     }
 
     .info-item h4 {
         font-size: 0.85rem;
-        /* Testo piccolo */
         margin-bottom: 2px;
     }
 
     .info-item p {
         font-size: 0.75rem;
-        /* Email/Username molto piccoli per stare in riga */
         word-break: break-all;
-        /* Evita che l'email lunga spacchi il box */
     }
 
-    /* Regolazioni form */
     .form-row {
         grid-template-columns: 1fr;
-        /* Gli input restano uno sotto l'altro */
     }
 
     .contact-form {
@@ -236,11 +228,9 @@
     }
 }
 
-/* Per schermi molto piccoli (es. iPhone SE) */
 @media (max-width: 380px) {
     .contact-info-row {
         grid-template-columns: 1fr;
-        /* Solo se lo schermo è davvero minuscolo li mettiamo in colonna */
     }
 }
 
@@ -253,13 +243,11 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(12px);
-    /* Sfuma tutto il sito dietro */
     -webkit-backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    /* Sopra a tutto */
     animation: fadeIn 0.4s ease-out;
 }
 
@@ -294,7 +282,6 @@
     font-size: 0.9rem;
 }
 
-/* Barra temporizzata che si svuota */
 .loading-bar {
     position: absolute;
     bottom: 0;
