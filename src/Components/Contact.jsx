@@ -11,8 +11,8 @@ const Contact = () => {
         setStatus('SENDING...');
 
         emailjs.sendForm(
-            'service_mjoha3b',
-            'template_vgx2mq9',
+            'service_coding',
+            'template_txrg0gl',
             form.current,
             'f3vMo7_Nj60quGQ90'
         )
@@ -71,7 +71,7 @@ const Contact = () => {
                                 <input
                                     type="text"
                                     name="name"
-                                    placeholder="Nome"
+                                    placeholder="Nome Cognome"
                                     required
                                 />
                             </div>
